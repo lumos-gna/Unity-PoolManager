@@ -13,6 +13,7 @@ public class PoolManager : MonoBehaviour
         if (_pools.ContainsKey(key))
             return;
 
+
         var pool = new ObjectPool<GameObject>(
             createFunc: () => Instantiate(prefab),
             actionOnGet: obj => obj.SetActive(true),
